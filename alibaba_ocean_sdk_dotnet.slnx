@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Alibaba.Ocean.Sdk/Alibaba.Ocean.Sdk.csproj" />
+  <Project Path="TestProject1/TestProject1.csproj" Id="b3e4083f-22bb-44ca-a045-c283d9032286" />
+</Solution>
