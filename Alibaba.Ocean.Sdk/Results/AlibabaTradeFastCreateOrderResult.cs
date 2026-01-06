@@ -15,6 +15,11 @@ public class AlibabaTradeFastCreateOrderResult : GatewayAPIResponse
     [JsonPropertyName("message")]
     public string? Message { get; set; }
     /// <summary>
+    /// 是否成功，成功时为true, null或false时为失败
+    /// </summary>
+    [JsonPropertyName("success")]
+    public bool? Success { get; set; }
+    /// <summary>
     /// 查询返回列表
     /// </summary>
     [JsonPropertyName("result")]

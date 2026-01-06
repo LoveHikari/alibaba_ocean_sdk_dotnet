@@ -19,7 +19,7 @@ namespace Alibaba.Ocean.Sdk
         }
 
         /// <summary>
-        /// 获取买家订单列表（POST方式）
+        /// 执行
         /// </summary>
         public async Task<T> ExecuteAsync<T>(GatewayAPIRequest request,string accessToken) where T : GatewayAPIResponse
         {
@@ -32,6 +32,10 @@ namespace Alibaba.Ocean.Sdk
             {
                 // 2. 生成签名
                 urlPath = "param2/1/com.alibaba.trade/alibaba.trade.getBuyerOrderList";
+            }
+            else if (request.GetType() == typeof(AlibabaTradeGetLogisticsTraceInfoBuyerViewParam))
+            {
+                urlPath = "param2/1/com.alibaba.logistics/alibaba.trade.getLogisticsTraceInfo.buyerView";
             }
 
             urlPath += $"/{_appKey}";
