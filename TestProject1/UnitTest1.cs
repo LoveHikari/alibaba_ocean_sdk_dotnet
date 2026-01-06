@@ -13,45 +13,45 @@ namespace TestProject1
             {
                 // 2. 调用API
                 var client = new ApiExecutor("8832053", "CQBDXSNbsm1");
-                AlibabaTradeGetBuyerOrderListParam param = new()
-                {
-                    Page = 1,
-                    PageSize = 50,
-                    CreateStartTime = DateTimeOffset.Parse("2026-1-3 16:34:08 +08:00"),
-                    CreateEndTime = DateTimeOffset.Now,
-                };
-                var response = await client.ExecuteAsync<AlibabaTradeGetBuyerOrderListResult>(param, "c7c9942d-9cd8-487d-a7f1-e5d7426e0798");
-
-
-                //List<AlibabaTradeFastCreateOrderParam.AlibabaTradeFastCargo> cargoParamList = new ();
-                //cargoParamList.Add(new AlibabaTradeFastCreateOrderParam.AlibabaTradeFastCargo()
+                //AlibabaTradeGetBuyerOrderListParam param = new()
                 //{
-                //    Quantity = 1,
-                //    SpecId = "744f38c97bde3c42f41b80d439e303ae",
-                //    OfferId = 764396306966
-                //});
-                //AlibabaTradeFastCreateOrderParam request = new AlibabaTradeFastCreateOrderParam()
-                //{
-                //    AddressParam = new AlibabaTradeFastCreateOrderParam.AlibabaTradeFastAddress()
-                //    {
-                //        Address = "丹阳开发区江苏积家光学有限公司一号楼一楼大玻璃门边上【惟友光学】",
-                //        AddressId = 9151201358,
-                //        TownText = "",
-                //        AreaText = "丹阳市",
-                //        CityText = "镇江市",
-                //        ProvinceText = "江苏省",
-                //        DistrictCode = "321181",
-                //        FullName = "陈中",
-                //        Mobile = "15050855459",
-                //        Phone = "",
-                //        PostCode = "",
-
-                //    },
-                //    CargoParamList = cargoParamList,
-                //    Flow = "fenxiao",
-                //    UseRedEnvelope = "y"
+                //    Page = 1,
+                //    PageSize = 50,
+                //    CreateStartTime = DateTimeOffset.Parse("2026-1-3 16:34:08 +08:00"),
+                //    CreateEndTime = DateTimeOffset.Now,
                 //};
-                //var response = await client.ExecuteAsync(request, "c7c9942d-9cd8-487d-a7f1-e5d7426e0798");
+                //var response = await client.ExecuteAsync<AlibabaTradeGetBuyerOrderListResult>(param, "c7c9942d-9cd8-487d-a7f1-e5d7426e0798");
+
+
+                List<AlibabaTradeFastCreateOrderParam.AlibabaTradeFastCargo> cargoParamList = new();
+                cargoParamList.Add(new AlibabaTradeFastCreateOrderParam.AlibabaTradeFastCargo()
+                {
+                    Quantity = 1,
+                    SpecId = "789e9db185c38b010ef919a856e6d24c",
+                    OfferId = 997007127257
+                });
+                AlibabaTradeFastCreateOrderParam request = new AlibabaTradeFastCreateOrderParam()
+                {
+                    AddressParam = new AlibabaTradeFastCreateOrderParam.AlibabaTradeFastAddress()
+                    {
+                        Address = "丹阳开发区江苏积家光学有限公司一号楼一楼大玻璃门边上【惟友光学】",
+                        AddressId = 9151201358,
+                        TownText = "",
+                        AreaText = "丹阳市",
+                        CityText = "镇江市",
+                        ProvinceText = "江苏省",
+                        DistrictCode = "321181",
+                        FullName = "陈中",
+                        Mobile = "15050855459",
+                        Phone = "",
+                        PostCode = "",
+
+                    },
+                    CargoParamList = cargoParamList,
+                    Flow = "fenxiao",
+                    UseRedEnvelope = "y"
+                };
+                var response = await client.ExecuteAsync<AlibabaTradeFastCreateOrderResult>(request, "c7c9942d-9cd8-487d-a7f1-e5d7426e0798");
 
 
                 // 3. 处理结果

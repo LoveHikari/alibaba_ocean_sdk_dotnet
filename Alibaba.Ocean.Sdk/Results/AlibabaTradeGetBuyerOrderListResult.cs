@@ -8,6 +8,16 @@ namespace Alibaba.Ocean.Sdk.Results
     public class AlibabaTradeGetBuyerOrderListResult : GatewayAPIResponse
     {
         /// <summary>
+        /// 错误码
+        /// </summary>
+        [JsonPropertyName("error_code")]
+        public string? ErrorCode { get; set; }
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        [JsonPropertyName("error_message")]
+        public string? ErrorMessage { get; set; }
+        /// <summary>
         /// 总记录数
         /// </summary>
         [JsonPropertyName("totalRecord")]
@@ -18,6 +28,7 @@ namespace Alibaba.Ocean.Sdk.Results
         /// </summary>
         [JsonPropertyName("result")]
         public List<AlibabaTradeTradeInfo> Result { get; set; }
+
     }
 
     /// <summary>
